@@ -18,7 +18,6 @@ Game::Game() {
 }
 
 Game::~Game() {
-    UnloadSound(AUGH);
     UnloadSound(clearSound);
     for (int i = 0; i < (int)stackSounds.size(); i++) {
         UnloadSound(stackSounds[i]);
@@ -137,7 +136,6 @@ void Game::LockBlock() {
 
     currBlock = nextBlock;
     if (BlockFits() == false) {
-        PlaySound(AUGH);
         gameOver = true;
     }
     nextBlock = GetRandomBlock();
